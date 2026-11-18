@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MyBuddy × Courts Mammouth</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #0f2233; --muted: #50606e; --line: #dfe6ec;
+    --brand: #0a7c86; --brand-dark: #075c63; --brand-soft: #e6f4f5;
+    --accent: #f28c28; --paper: #ffffff; --tint: #f6f9fb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); }
+  body {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); font-size: 10.2pt; line-height: 1.45;
+    width: 210mm; height: 297mm; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  header {
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+    color: #fff; padding: 11mm 16mm 9mm;
+  }
+  .kicker { font-size: 8.5pt; letter-spacing: .14em; text-transform: uppercase; opacity: .85; font-weight: 600; }
+  h1 { font-family: "Inter Display", "Inter", sans-serif; font-size: 24pt; line-height: 1.12; font-weight: 700; margin: 2.5mm 0 2.5mm; }
+  h1 span { color: #ffd9b0; }
+  .lede { font-size: 10.5pt; max-width: 150mm; opacity: .95; }
+  main { padding: 7mm 16mm 0; }
+  h2 { font-size: 11.5pt; font-weight: 700; color: var(--brand-dark); margin-bottom: 2.5mm; }
+  .row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 9mm; margin-bottom: 5mm; }
+  ul.ticks { list-style: none; }
+  ul.ticks li { padding-left: 6mm; position: relative; margin-bottom: 1.8mm; }
+  ul.ticks li::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--accent); }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2mm; }
+  .feat { background: var(--tint); border: 1px solid var(--line); border-radius: 2.5mm; padding: 2.6mm 3mm; font-size: 9.2pt; }
+  .feat b { display: block; font-size: 9.6pt; color: var(--ink); }
+  .feat span { color: var(--muted); }
+  /* mock card */
+  .chips { display:flex; flex-wrap:wrap; gap:2mm; }
+  .chips span { background: var(--brand-soft); color: var(--brand-dark); font-weight:600; font-size:9pt; padding:1.3mm 3mm; border-radius:10mm; }
+  .mock { align-self:start; border: 1px solid var(--line); border-radius: 4mm; padding: 4mm; background: var(--tint); }
+  .mock .bar { font-size: 8pt; color: var(--muted); margin-bottom: 2.5mm; display: flex; justify-content: space-between; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 3mm; padding: 3.5mm; }
+  .card .img { height: 22mm; border-radius: 2mm; background: linear-gradient(135deg, #d9e8ee, #eef4f7); display: flex; align-items: center; justify-content: center; color: #8aa0ad; font-size: 8pt; margin-bottom: 2.5mm; }
+  .card .name { font-weight: 600; font-size: 9.6pt; }
+  .card .ret { font-size: 8pt; color: var(--brand-dark); font-weight: 600; margin: .6mm 0 1.6mm; }
+  .price { display: flex; align-items: baseline; gap: 2mm; }
+  .price b { font-size: 13pt; }
+  .price s { color: var(--muted); font-size: 8.5pt; }
+  .tag { display: inline-block; background: #fff1e3; color: #b35a00; font-size: 7.5pt; font-weight: 700; padding: .6mm 2mm; border-radius: 10mm; margin-left: auto; }
+  .inst { font-size: 8.5pt; color: var(--brand-dark); background: var(--brand-soft); border-radius: 1.5mm; padding: 1mm 2mm; margin-top: 1.8mm; display: inline-block; }
+  .btn { margin-top: 2.8mm; background: var(--accent); color: #fff; text-align: center; font-weight: 700; font-size: 9pt; padding: 2mm; border-radius: 2mm; }
+  .mock .note { font-size: 7.5pt; color: var(--muted); margin-top: 2mm; text-align: center; }
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 5mm; }
+  .step { border-top: 1.2mm solid var(--brand); padding-top: 2.5mm; }
+  .step .n { font-size: 8pt; font-weight: 700; color: var(--brand); letter-spacing: .1em; }
+  .step b { display: block; font-size: 10.5pt; margin: .6mm 0 .8mm; }
+  .step p { color: var(--muted); font-size: 9.2pt; }
+  .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 0; }
+  .box { border-radius: 3mm; padding: 4.5mm 5mm; }
+  .box.launch { background: var(--brand); color: #fff; }
+  .box.launch h2 { color: #fff; }
+  .box.later { background: var(--tint); border: 1px solid var(--line); }
+  .box p, .box li { font-size: 9.4pt; }
+  .box ul { padding-left: 4.5mm; }
+  .box li { margin-bottom: 1mm; }
+  .big { font-family: "Inter Display", "Inter", sans-serif; font-size: 15pt; font-weight: 700; line-height: 1.15; margin-bottom: 1.5mm; }
+  .need { font-size: 9.4pt; color: var(--muted); margin-bottom: 5mm; }
+  .need b { color: var(--ink); }
+  footer { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid var(--line); padding: 4mm 16mm 6mm; display: flex; justify-content: space-between; align-items: center; background: #fff; }
+  footer .who b { font-size: 11pt; display: block; }
+  footer .who span { color: var(--muted); font-size: 9.2pt; }
+  footer .cta { background: var(--accent); color: #fff; font-weight: 700; padding: 3mm 5mm; border-radius: 2.5mm; font-size: 9.6pt; }
+  body { position: relative; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Launch partner proposal · Courts Mammouth</div>
+  <h1>Reach Mauritians<br><span>who are ready to buy.</span></h1>
+  <p class="lede">MyBuddy is an all-in-one mobile app built for Mauritius, launching soon and aiming for 200,000 users. Its shopping section shows products and promotions from local retailers, and every tap sends the customer to your website to buy.</p>
+</header>
+
+<main>
+  <div class="row">
+    <div>
+      <h2>One app for daily life in Mauritius</h2>
+      <div class="chips"><span>Weather &amp; cyclone alerts</span><span>Day planner</span><span>Explore Mauritius</span><span>Local shopping</span></div>
+      <h2 style="margin-top:5mm">Why Courts Mammouth benefits</h2>
+      <ul class="ticks">
+        <li><b>Customers in buying mode.</b> People browsing products and deals are already planning a purchase.</li>
+        <li><b>The sale happens on your site.</b> MyBuddy never sells your products. Every click goes to your website.</li>
+        <li><b>Measured traffic.</b> Tracked links show exactly how many customers MyBuddy sends you.</li>
+        <li><b>Instalments up front.</b> Monthly prices appear next to the cash price, showing what makes Courts different.</li>
+      </ul>
+    </div>
+    <div class="mock">
+      <div class="bar"><span>MyBuddy · Shop &amp; Compare</span><span>Illustration</span></div>
+      <div class="card">
+        <div class="img">Product image</div>
+        <div class="name">55" 4K Smart TV</div>
+        <div class="ret">Courts Mammouth</div>
+        <div class="price"><b>Rs XX,XXX</b><s>Rs XX,XXX</s><span class="tag">PROMO</span></div>
+        <div class="inst">or Rs X,XXX / month</div>
+        <div class="btn">View on Courts Mammouth →</div>
+      </div>
+      <div class="note">Illustration of how a listing appears. Not real prices.</div>
+    </div>
+  </div>
+
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="n">STEP 1</div><b>Share your product list</b><p>Name, price, image and link per product (plus instalments), as CSV, Excel or an existing catalogue feed.</p></div>
+    <div class="step"><div class="n">STEP 2</div><b>We list your products</b><p>We handle the whole integration. No development work for your team.</p></div>
+    <div class="step"><div class="n">STEP 3</div><b>Customers come to you</b><p>Shoppers tap through and buy on your website, as usual.</p></div>
+  </div>
+
+  <div class="offer">
+    <div class="box launch">
+      <h2>Launch partner offer</h2>
+      <div class="big">No cost for the first 6 months</div>
+      <p>Your products listed from day one, with monthly traffic reports. You can update or remove your products at any time.</p>
+    </div>
+    <div class="box later">
+      <h2>Promotion options (optional)</h2>
+      <ul>
+        <li>Featured placement at the top of search results</li>
+        <li>Home screen banners for campaigns such as Black Friday or back-to-school</li>
+        <li>Sponsored "Deals this week" spots</li>
+      </ul>
+      <p style="color:var(--muted);margin-top:1.5mm">Details shared on request.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="who">
+    <b>Shravan Murachpersad</b>
+    <span>Founder, MyBuddy · [Phone / WhatsApp] · [Email]</span>
+  </div>
+  <div class="cta">Book a 15-minute preview</div>
+</footer>
+</body>
+</html>
