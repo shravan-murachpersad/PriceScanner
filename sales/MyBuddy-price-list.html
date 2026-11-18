@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MyBuddy Partner Rates</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #0f2233; --muted: #50606e; --line: #dfe6ec;
+    --brand: #0a7c86; --brand-dark: #075c63; --brand-soft: #e6f4f5;
+    --accent: #f28c28; --paper: #ffffff; --tint: #f6f9fb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); }
+  body {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); font-size: 10.2pt; line-height: 1.45;
+    width: 210mm; height: 297mm; overflow: hidden; position: relative;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  header { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); color: #fff; padding: 11mm 16mm 9mm; }
+  .kicker { font-size: 8.5pt; letter-spacing: .14em; text-transform: uppercase; opacity: .85; font-weight: 600; }
+  h1 { font-family: "Inter Display", "Inter", sans-serif; font-size: 24pt; line-height: 1.12; font-weight: 700; margin: 2.5mm 0; }
+  h1 span { color: #ffd9b0; }
+  .lede { font-size: 10.5pt; max-width: 155mm; opacity: .95; }
+  main { padding: 8mm 16mm 0; }
+  h2 { font-size: 11.5pt; font-weight: 700; color: var(--brand-dark); margin-bottom: 3mm; }
+  .free { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 6mm; }
+  .box { border-radius: 3mm; padding: 4.5mm 5mm; }
+  .box.main { background: var(--brand); color: #fff; }
+  .box.alt { background: var(--tint); border: 1px solid var(--line); }
+  .box .label { font-size: 8.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+  .box .big { font-family: "Inter Display", "Inter", sans-serif; font-size: 20pt; font-weight: 700; margin: 1mm 0 1.5mm; }
+  .box.alt .big { color: var(--brand-dark); font-size: 15pt; }
+  .box p { font-size: 9.4pt; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 3mm; }
+  th { text-align: left; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; padding: 0 3mm 2mm 0; border-bottom: 1.5px solid var(--ink); }
+  th.r, td.r { text-align: right; padding-right: 0; }
+  td { padding: 2.8mm 3mm 2.8mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td b { display: block; font-size: 10.5pt; }
+  td span { color: var(--muted); font-size: 9.2pt; }
+  td.r b { font-size: 12.5pt; white-space: nowrap; }
+  td.r span { white-space: nowrap; }
+  .note { font-size: 9pt; color: var(--muted); margin-bottom: 5mm; }
+  .promo { display: flex; gap: 4mm; align-items: center; background: #fff4e8; border: 1px solid #f7d2ab; border-radius: 3mm; padding: 3.5mm 5mm; margin-bottom: 5mm; }
+  .promo .pct { font-family: "Inter Display", "Inter", sans-serif; font-size: 20pt; font-weight: 700; color: #c4610a; line-height: 1; white-space: nowrap; }
+  .promo p { font-size: 9.6pt; }
+  .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 8mm; list-style: none; }
+  .terms li { font-size: 9.2pt; color: var(--muted); padding-left: 4.5mm; position: relative; }
+  .terms li::before { content: ""; position: absolute; left: 0; top: 1.7mm; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: var(--brand); }
+  footer { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid var(--line); padding: 4mm 16mm 6mm; display: flex; justify-content: space-between; align-items: center; background: #fff; }
+  footer b { font-size: 11pt; display: block; }
+  footer span { color: var(--muted); font-size: 9.2pt; }
+  footer .valid { text-align: right; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">MyBuddy · Retail partner rates</div>
+  <h1>Listing is free.<br><span>Pay only for extra visibility.</span></h1>
+  <p class="lede">MyBuddy is an all-in-one app for Mauritius. Its shopping section shows your products and promotions, and every tap sends the customer to your website to buy.</p>
+</header>
+
+<main>
+  <div class="free">
+    <div class="box main">
+      <div class="label">Standard listing</div>
+      <div class="big">Free</div>
+      <p>All your products in search and categories, a link to your website on each one, and a monthly traffic report.</p>
+    </div>
+    <div class="box alt">
+      <div class="label">No website?</div>
+      <div class="big">Sell on Mauboutik</div>
+      <p>Our marketplace lets shops without a website sell directly through MyBuddy. Ask us for details.</p>
+    </div>
+  </div>
+
+  <h2>Promotion options</h2>
+  <table>
+    <tr><th>Option</th><th class="r">Price</th></tr>
+    <tr><td><b>Featured placement</b><span>Your products shown first in one category and its search results.</span></td><td class="r"><b>Rs 8,000</b><span>per category / month</span></td></tr>
+    <tr><td><b>Home screen banner</b><span>A home screen banner for campaigns such as Black Friday or back-to-school.</span></td><td class="r"><b>Rs 15,000</b><span>per week</span></td></tr>
+    <tr><td><b>"Deals this week" spot</b><span>A guaranteed place in the weekly deals carousel on the home screen.</span></td><td class="r"><b>Rs 5,000</b><span>per week</span></td></tr>
+    <tr><td><b>Pay per click</b><span>Boosted visibility. Pay only for visits to your website, up to a monthly budget you set.</span></td><td class="r"><b>Rs 4</b><span>per click</span></td></tr>
+  </table>
+  <p class="note">Prices in Mauritian rupees, excluding VAT where applicable.</p>
+
+  <div class="promo">
+    <div class="pct">20% off</div>
+    <p><b>Launch partners</b> get 20% off all promotion options for their first 3 months of paid promotion.</p>
+  </div>
+
+  <h2>Good to know</h2>
+  <ul class="terms">
+    <li>Every option is agreed in writing first.</li>
+    <li>Campaigns paid upfront, monthly options invoiced monthly.</li>
+    <li>Payment within 30 days by bank transfer.</li>
+    <li>Monthly report of views and clicks with every invoice.</li>
+    <li>Repeat clicks within 24 hours and bot traffic are not counted.</li>
+    <li>Cancel monthly options with 30 days' notice.</li>
+  </ul>
+</main>
+
+<footer>
+  <div><b>Shravan Murachpersad</b><span>Founder, MyBuddy · [Phone / WhatsApp] · [Email]</span></div>
+  <div class="valid"><span>Rates valid from launch.<br>Subject to change with 30 days' notice.</span></div>
+</footer>
+</body>
+</html>
